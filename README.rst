@@ -1,3 +1,4 @@
+=========
 konami.js
 =========
 
@@ -5,7 +6,7 @@ Because reinventing the wheel is fun. That and the other konami.js wasn't
 working for a friend, while this approach was.
 
 How to use
-----------
+==========
 
 1. Include the script into your page, either from your own domain (preferred, if
    your traffic is medium-to-high), or http://psquid.eu/konami.js (if you don't
@@ -27,4 +28,38 @@ How to use
         // do some stuff here
     }, true);
 
-4. You're done!
+4. You're done! Unless you want to customize it a little, in which case, see
+   below.
+
+
+Customizing
+===========
+
+For 99% of cases, this won't be useful, but the options are there if you want
+them.
+
+A different code
+----------------
+
+Change the `code` property on your object to the array of keycodes you'd like to
+use as the trigger, for example (using the code in reverse except for return)::
+
+    var konami = new Konami(function() {
+        // do some stuff here
+    });
+    konami.code = [65, 66, 39, 37, 39, 37, 40, 40, 38, 38, 13];
+
+Changing movement prevention dynamically
+----------------------------------------
+
+If you want your object to only consume movement keypresses some of the time,
+change its `preventMovement` property to `true` or `false` in appropriate parts
+of your code.
+
+Changing the function
+---------------------
+
+You can even change the function it calls at a point after it's created, by
+setting its `func` property to a different function. For example, you could use
+such a change to have it call a different function the second time it's fired,
+by setting `func` inside the original function.
