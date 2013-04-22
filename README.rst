@@ -28,7 +28,12 @@ How to use
         // do some stuff here
     }, true);
 
-4. You're done! Unless you want to customize it a little, in which case, see
+4. Also optionally, you may pass in a URL instead of a function, in which case
+   users will be redirected to that instead::
+
+    var konami = new Konami("http://www.example.com/");
+
+5. You're done! Unless you want to customize it a little, in which case, see
    below.
 
 
@@ -56,10 +61,10 @@ If you want your object to only consume movement keypresses some of the time,
 change its ``preventMovement`` property to ``true`` or ``false`` in appropriate parts
 of your code.
 
-Changing the function
----------------------
+Changing the target function/URL
+--------------------------------
 
-You can even change the function it calls at a point after it's created, by
-setting its ``func`` property to a different function. For example, you could use
-such a change to have it call a different function the second time it's fired,
-by setting ``func`` inside the original function.
+You can even change the target function/URL at a point after your object's
+created, by setting its ``target`` property to a different value. For example,
+you could use such a change to have it call a different function the second time
+it's fired, by setting ``target`` inside the original function.

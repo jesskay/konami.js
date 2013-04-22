@@ -12,8 +12,8 @@ var bindEvent = function(element, event, handler) {
     }
 }
 
-var Konami = function(konamiFunc, preventMovement) {
-    this.func = konamiFunc;
+var Konami = function(target, preventMovement) {
+    this.target = target;
     this.preventMovement = preventMovement || false;
     this.lastKeys = [];
     this.code = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
@@ -28,7 +28,11 @@ var Konami = function(konamiFunc, preventMovement) {
         this.lastKeys.push(e.keyCode);
 
         if(!((this.lastKeys < this.code) || (this.lastKeys > this.code))) {  // cheap and nasty way of doing equality for flat arrays
-            this.func();
+            if(typeof this.target === 'function') {
+                this.target();
+            } else {
+                window.location.href = this.target;
+            }
         }
 
         if(this.preventMovement) {
