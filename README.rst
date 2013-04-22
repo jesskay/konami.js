@@ -41,7 +41,7 @@ them.
 A different code
 ----------------
 
-Change the `code` property on your object to the array of keycodes you'd like to
+Change the ``code`` property on your object to the array of keycodes you'd like to
 use as the trigger, for example (using the code in reverse except for return)::
 
     var konami = new Konami(function() {
@@ -53,13 +53,13 @@ Changing movement prevention dynamically
 ----------------------------------------
 
 If you want your object to only consume movement keypresses some of the time,
-change its `preventMovement` property to `true` or `false` in appropriate parts
+change its ``preventMovement`` property to ``true`` or ``false`` in appropriate parts
 of your code.
 
 Changing the function
 ---------------------
 
 You can even change the function it calls at a point after it's created, by
-setting its `func` property to a different function. For example, you could use
+setting its ``func`` property to a different function. For example, you could use
 such a change to have it call a different function the second time it's fired,
-by setting `func` inside the original function.
+by setting ``func`` inside the original function.
