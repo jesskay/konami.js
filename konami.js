@@ -1,4 +1,4 @@
-var bindEvent = function(element, event, handler) {
+function bindEvent(element, event, handler) {
     if(element.addEventListener) {
         element.addEventListener(event, handler, false);
     } else if(element.attachEvent) {
