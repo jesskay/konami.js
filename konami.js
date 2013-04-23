@@ -50,3 +50,21 @@ var Konami = function(target, preventMovement) {
         }
     }).bind(this));
 }
+
+Konami.prototype.codeFromAlphaNumString = function(codeString) {
+    var oldCode = this.code;
+    this.code = [];
+
+    for(var i = 0; i < codeString.length; i++) {
+        if(((codeString.charCodeAt(i) >= 65) && (codeString.charCodeAt(i) <= 90)) || ((codeString.charCodeAt(i) >= 48) && (codeString.charCodeAt(i) <= 57))) {
+	    this.code.push(codeString.charCodeAt(i));  // push code as is if A-Z | 0-9
+        } else if((codeString.charCodeAt(i) >= 97) && (codeString.charCodeAt(i) <= 122)) {
+            this.code.push(codeString.charCodeAt(i) - 32);  // push code - 32 if a-z
+        } else {
+            this.code = oldCode;  // restore code and...
+            return false;  // ...fail if none of the above
+        }
+    }
+
+    return true;
+}

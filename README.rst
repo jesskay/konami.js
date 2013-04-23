@@ -46,8 +46,21 @@ them.
 A different code
 ----------------
 
-Change the ``code`` property on your object to the array of keycodes you'd like to
-use as the trigger, for example (using the code in reverse except for return)::
+If you only want to use keycodes in the ranges A-Z, a-z, 0-9, then you can take
+a shortcut by using the ``codeFromAlphaNumString`` method on your object::
+
+    var konami = new Konami(function() {
+        // do some stuff here
+    });
+    konami.codeFromAlphaNumString('konami');
+
+``codeFromAlphaNumString`` will fail and return ``false`` if given a string
+containing invalid characters, or return ``true`` if it was able to successfully
+set the code.
+
+If you want to use key codes outside that range, instead change the ``code``
+property on your object to the array of keycodes you'd like to use as the
+trigger, for example (using the classic code in reverse except for return)::
 
     var konami = new Konami(function() {
         // do some stuff here
