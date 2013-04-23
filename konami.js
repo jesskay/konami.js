@@ -33,6 +33,10 @@ var Konami = function(target, preventMovement) {
             } else {
                 window.location.href = this.target;
             }
+
+            // insert filler code to prevent repetitive keys (ex. "desudesu") firing more often that intended
+            this.lastKeys.push(0);
+            this.lastKeys.shift();
         }
 
         if(this.preventMovement) {
