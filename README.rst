@@ -9,7 +9,7 @@ How to use
 ==========
 
 1. Include the script into your page, either from your own domain (preferred, if
-   your traffic is medium-to-high), or http://psquid.eu/konami.js (if you don't
+   your traffic is medium-to-high), or http://kitsun.es/konami.js (if you don't
    need SSL, or you haven't got web space you can freely upload to).
 
 2. In your code, create a new Konami object, passing in the function for it to
