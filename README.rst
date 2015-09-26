@@ -12,9 +12,9 @@ How to use
    your traffic is medium-to-high), or http://msjessi.ca/konami.js (if you don't
    need SSL, or you haven't got web space you can freely upload to).
 
-1.5. You may also use konami.js as an AMD module with any compatible loader
+   (You may also use konami.js as an AMD module with any compatible loader
    (such as RequireJS), in which case you should use the module reference itself
-   as a constructor instead of the global "Konami" object in the examples below.
+   as a constructor instead of the global "Konami" object in the examples below.)
 
 2. In your code, create a new Konami object, passing in the function for it to
    call when the code is recognized::
